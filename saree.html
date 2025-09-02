@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Saree Designs - Varaahi Computer Embroidery</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #fff9f9;
+    }
+
+    /* Navbar */
+    nav {
+      background: purple;
+      color: white;
+font-weight: bold;
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    nav img {
+      height: 100px;
+      border-radius: 80px;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      margin: 0;
+      padding: 0;
+    }
+    nav ul li {
+      margin: 0 15px;
+    }
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 18px;
+      padding: 8px 14px;
+      transition: color 0.3s, transform 0.2s;
+    }
+    nav ul li a:hover {
+      text-decoration: underline;
+      color: #ffd700;
+      transform: scale(1.1);
+    }
+
+    /* Page Title */
+    .title {
+      text-align: center;
+      padding: 40px 20px;
+      color: purple;
+    }
+    .title h1 {
+      font-size: 40px;
+      margin-bottom: 10px;
+font-weight: bold;
+    }
+    .title p {
+      font-size: 20px;
+font-weight: bold;
+      color: #444;
+    }
+
+    /* Gallery */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+      padding: 40px;
+font-weight: bold;
+    }
+    .gallery-item {
+      text-align: center;
+      background: white;
+font-weight: bold;
+      border-radius: 15px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      padding: 15px;
+      transition: transform 0.3s;
+    }
+    .gallery-item:hover {
+      transform: scale(1.05);
+    }
+    .gallery-item img {
+      width: 100%;
+      height: 320px;
+font-weight: bold;
+      object-fit: cover;
+      border-radius: 12px;
+      margin-bottom: 12px;
+    }
+    .gallery-item p {
+      font-size: 18px;
+      font-weight: bold;
+      color: purple;
+      margin: 0;
+    }
+
+    /* Footer */
+    footer {
+      background: purple;
+      color: white;
+font-weight: bold;
+      text-align: center;
+      padding: 15px;
+      margin-top: 30px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav>
+    <img src="logo.jpg" alt="Varaahi Logo">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="logout" onclick="logout()">Logout</a></li>
+    </ul>
+  </nav>
+
+  <!-- Title -->
+  <div class="title">
+    <h1>✨ Saree Work Collection ✨</h1>
+    <p>Explore our beautifully crafted embroidery saree designs.</p>
+  </div>
+
+  <!-- Gallery -->
+  <div class="gallery-grid">
+    <div class="gallery-item">
+      <img src="saree1.jpeg" alt="Saree Design 1">
+         </div>
+    <div class="gallery-item">
+      <img src="saree2.jpeg" alt="Saree Design 2">
+      
+    </div>
+    <div class="gallery-item">
+      <img src="saree3.jpeg" alt="Saree Design 3">
+      
+    </div>
+    <div class="gallery-item">
+      <img src="saree4.jpg" alt="Saree Design 4">
+      
+    </div>
+    <div class="gallery-item">
+      <img src="saree5.jpeg" alt="Saree Design 5">
+      
+    </div>
+    <div class="gallery-item">
+      <img src="saree6.jpeg" alt="Saree Design 6">
+         </div>
+    <div class="gallery-item">
+      <img src="saree7.webp" alt="Saree Design 7">
+          </div>
+    <div class="gallery-item">
+      <img src="saree8.webp" alt="Saree Design 8">
+          </div>
+    <div class="gallery-item">
+      <img src="saree9.webp" alt="Saree Design 9">
+          </div>
+    <div class="gallery-item">
+      <img src="saree10.jpeg" alt="Saree Design 10">
+          </div>
+    <!-- Add more saree11.jpg ... saree30.jpg as needed -->
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Varaahi Computer Embroidery. All Rights Reserved.</p>
+  </footer>
+
+  <script>
+    function logout() {
+      let confirmLogout = confirm("Are you sure you want to logout?");
+      if (confirmLogout) {
+        window.location.href = "login.html";
+      }
+    }
+  </script>
+
+</body>
+</html>

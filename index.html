@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Varaahi Computer Embroideries and Tailoring</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #fdf8ff;
+    }
+
+    /* Welcome Screen */
+    #welcome-screen {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: purple;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      font-size: 28px;
+      z-index: 9999;
+    }
+    #welcome-screen h1 {
+      font-size: 50px;
+      text-align: center;
+      animation: pop 1.5s ease-in-out infinite;
+    }
+
+    @keyframes pop {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.3); }
+    }
+
+    /* Hide main content initially */
+    #main-content {
+      display: none;
+    }
+
+    /* Navbar */
+    nav {
+      background: purple;
+      color: white;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 30px; 
+    }
+    nav img {
+      height: 230px;
+      border-radius: 50%;
+      margin-right: 70px;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      margin: 0;
+      padding: 0;
+      gap: 30px;
+    }
+    nav ul li {
+      margin: 0;
+    }
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 25px;
+      padding: 10px 18px;
+      transition: color 0.3s, transform 0.2s;
+    }
+    nav ul li a:hover {
+      text-decoration: underline;
+      color: #ffd700;
+      transform: scale(1.1);
+    }
+
+    /* Hero Section */
+    .hero {
+      text-align: center;
+      padding: 100px 50px;
+      background: purple;
+    }
+    .hero img {
+      width: 350px;
+      height: 220px;
+      object-fit: cover;
+      border: 3px solid white;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    }
+    .hero h1 {
+      font-size: 36px;
+      margin: 10px 0;
+      font-family: "Georgia", serif;
+      color: white;
+    }
+    .hero p {
+      font-size: 22px;
+      font-family: "Georgia", serif;
+      color: white;
+    }
+
+    /* Gallery Section */
+    .gallery {
+      padding: 40px;
+      text-align: center;
+    }
+    .gallery h2 {
+      font-size: 28px;
+      color: purple;
+      margin-bottom: 20px;
+    }
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+    .gallery-grid a {
+      text-decoration: none;
+      color: purple;
+      font-weight: bold;
+    }
+    .gallery-grid img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+      border-radius: 15px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+    }
+    .gallery-grid img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 6px 16px rgba(0,0,0,0.3);
+    }
+
+    /* Footer */
+    footer {
+      background: purple;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 30px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Welcome Screen -->
+  <div id="welcome-screen">
+    <h1>✨ Welcome to Varaahi Computer Embroideries and Tailoring ✨</h1>
+  </div>
+
+  <!-- Main Content -->
+  <div id="main-content">
+    <!-- Navigation -->
+    <nav>
+      <img src="logo.jpg" alt="Varaahi Logo">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="logout" onclick="logout()">Logout</a></li>
+      </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="hero">
+      <img src="shop.jpeg" alt="Shop Image">
+      <h1>Varaahi Computer Embroidery</h1>
+      <p>✨ Welcome to our world of creativity & stitching elegance ✨</p>
+    </div>
+
+    <!-- Gallery Section -->
+    <div class="gallery">
+      <h2>Our Designs</h2>
+      <div class="gallery-grid">
+        <a href="blouse.html"><img src="blouse.webp" alt="Blouse"><p>Blouse Designs</p></a>
+        <a href="saree.html"><img src="saree.jpg" alt="Saree"><p>Saree Work</p></a>
+        <a href="dress.html"><img src="dress.jpg" alt="Dress"><p>Dress Material</p></a>
+        <a href="kids.html"><img src="kids.jpeg" alt="Kids"><p>Kids Wear</p></a>
+        <a href="menswear.html"><img src="menswear.webp" alt="Menswear"><p>Menswear</p></a>
+      </div>
+    </div>
+
+    <!-- Footer -->
+<footer>
+  <p>&copy; 2025 Varaahi Computer Embroidery. All Rights Reserved.</p>
+  <p><b>📞 Contact: 
+    <a href="tel:+919121865772" style="color:white; text-decoration:none;">+919121865772</a>
+  </b></p>
+  <p>
+    <b>
+      <a href="https://www.instagram.com/varahi_computer_embroidery" 
+         style="color:white; text-decoration:none; display:inline-flex; align-items:center;" 
+         target="_blank">
+        <!-- Instagram SVG Icon -->
+        <svg xmlns="http://www.w3.org/2000/svg" 
+             width="20" height="20" viewBox="0 0 24 24" 
+             fill="white" style="margin-right:5px;">
+          <path d="M7.5 2h9A5.5 5.5 0 0 1 22 7.5v9A5.5 5.5 0 0 1 16.5 22h-9A5.5 5.5 0 0 1 2 16.5v-9A5.5 5.5 0 0 1 7.5 2zm0 2A3.5 3.5 0 0 0 4 7.5v9A3.5 3.5 0 0 0 7.5 20h9a3.5 3.5 0 0 0 3.5-3.5v-9A3.5 3.5 0 0 0 16.5 4h-9zM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6zm5.75-3a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5z"/>
+        </svg>
+        varaahiEmbroidery
+      </a>
+    </b>
+  </p>
+</footer>
+
+  </div>
+
+  <!-- Script -->
+  <script>
+    // Hide welcome screen after 3 seconds
+    setTimeout(() => {
+      document.getElementById("welcome-screen").style.display = "none";
+      document.getElementById("main-content").style.display = "block";
+    }, 3000);
+
+    function logout() {
+      let confirmLogout = confirm("Are you sure you want to logout?");
+      if (confirmLogout) {
+        window.location.href = "login.html";
+      }
+    }
+// ✅ Check if logged in
+if (!localStorage.getItem("loggedInUser")) {
+  window.location.href = "login.html";
+}
+
+// ✅ Logout function
+function logout() {
+  let confirmLogout = confirm("Are you sure you want to logout?");
+  if (confirmLogout) {
+    localStorage.removeItem("loggedInUser");
+    window.location.href = "login.html";
+  }
+}
+
+  </script>
+
+</body>
+</html>

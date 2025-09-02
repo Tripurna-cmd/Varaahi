@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Register - Varaahi Computer Embroidery</title>
+  <style>
+    body { font-family: Arial, sans-serif; background:#f9f3ff; display:flex; align-items:center; justify-content:center; height:100vh; margin:0; }
+    .register-container { background:#fff; padding:28px; border-radius:12px; box-shadow:0 4px 15px rgba(0,0,0,0.15); width:380px; text-align:center; }
+    h2 { color: purple; margin-bottom:18px; }
+    input { width:90%; padding:10px; margin:8px 0; border:1px solid #ccc; border-radius:6px; font-size:15px; }
+    button { background:purple; color:#fff; padding:10px; border:none; border-radius:6px; width:94%; font-size:16px; cursor:pointer; }
+    button:hover { background:#5e0e87; }
+    .small { margin-top:12px; font-size:14px; }
+    .small a { color:purple; text-decoration:none; font-weight:bold; }
+  </style>
+</head>
+<body>
+  <div class="register-container">
+    <h2>Create an account</h2>
+
+    <form id="registerForm" autocomplete="off">
+      <input id="fullname" type="text" placeholder="Full name" required />
+      <input id="email" type="email" placeholder="Email" required />
+      <input id="username" type="text" placeholder="Choose username" required />
+      <input id="password" type="password" placeholder="Choose password (min 6 chars)" required />
+      <button type="submit">Register</button>
+    </form>
+
+    <p class="small">Already have an account? <a href="login.html">Login here</a></p>
+  </div>
+
+  <script>
+    // If already logged in, skip register and go to home
+    if (localStorage.getItem("loggedInUser")) {
+      window.location.href = "index.html";
+    }
+
+    const form = document.getElementById("registerForm");
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const fullname = document.getElementById("fullname").value.trim();
+      const email = document.getElementById("email").value.trim().toLowerCase();
+      const username = document.getElementById("username").value.trim();
+      const password = document.getElementById("password").value;
+
+      // Basic validation
+      if (password.length < 6) {
+        alert("Password must be at least 6 characters long.");
+        return;
+      }
+      if (!fullname || !email || !username) {
+        alert("Please fill all fields.");
+        return;
+      }
+
+      // Load existing users (or empty array)
+      const raw = localStorage.getItem("users");
+      const users = raw ? JSON.parse(raw) : [];
+
+      // Check duplicate username or email
+      const usernameExists = users.some(u => u.username.toLowerCase() === username.toLowerCase());
+      if (usernameExists) {
+        alert("Username already taken. Please choose another.");
+        return;
+      }
+      const emailExists = users.some(u => u.email === email);
+      if (emailExists) {
+        alert("An account with this email already exists. Use a different email or login.");
+        return;
+      }
+
+      // Add new user
+      const newUser = { fullname, email, username, password }; // NOTE: password stored in plain text (client-side demo)
+      users.push(newUser);
+      localStorage.setItem("users", JSON.stringify(users));
+
+      // Auto-login the new user (session)
+      localStorage.setItem("loggedInUser", username);
+
+      alert("Account created & logged in as " + username + " — Redirecting to home...");
+      window.location.href = "index.html";
+    });
+  </script>
+</body>
+</html>

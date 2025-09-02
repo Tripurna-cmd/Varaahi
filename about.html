@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us - Varaahi Computer Embroidery</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #fffafc;
+    }
+
+    nav {
+      background: purple;
+      color: white;
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    nav img {
+      height: 80px;
+      border-radius: 50%;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      margin: 0;
+      padding: 0;
+    }
+    nav ul li {
+      margin: 0 15px;
+    }
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 18px;
+    }
+    nav ul li a:hover {
+      text-decoration: underline;
+      color: #ffd700;
+    }
+
+    .about-section {
+      padding: 50px 20px;
+      text-align: center;
+      color: #333;
+    }
+    .about-section h1 {
+      font-size: 38px;
+      color: purple;
+      margin-bottom: 15px;
+    }
+    .about-section p {
+      font-size: 18px;
+      max-width: 800px;
+      margin: auto;
+font-weight: bold;
+
+      line-height: 1.6;
+    }
+
+    .categories {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      padding: 40px;
+    }
+    .category {
+      background: white;
+      border-radius: 12px;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      transition: transform 0.3s;
+    }
+    .category:hover {
+      transform: scale(1.05);
+    }
+    .category a {
+      text-decoration: none;
+      color: purple;
+      font-weight: bold;
+      font-size: 20px;
+    }
+
+    footer {
+      background: purple;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      margin-top: 30px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav>
+    <img src="logo.jpg" alt="Logo">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="logout" onclick="logout()">Logout</a></li>
+    </ul>
+  </nav>
+
+  <!-- About Section -->
+  <div class="about-section">
+    <h1>About Varaahi Computer Embroidery</h1>
+    <p>
+      At Varaahi Computer Embroidery, we specialize in unique and elegant embroidery designs 
+      for Sarees, Blouses, Kidswear, Menswear, and Dress Materials. Our passion lies in 
+      blending tradition with modern style to create masterpieces that stand out.
+    </p>
+  </div>
+
+  <!-- Categories -->
+  <div class="categories">
+    <div class="category"><a href="saree.html">✨ Saree Work ✨</a></div>
+    <div class="category"><a href="blouse.html">👗 Blouse Designs</a></div>
+    <div class="category"><a href="kidswear.html">🧒 Kidswear</a></div>
+    <div class="category"><a href="menswear.html">👔 Menswear</a></div>
+    <div class="category"><a href="dress.html">🌸 Dress Materials</a></div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Varaahi Computer Embroidery. All Rights Reserved.</p>
+  </footer>
+
+  <script>
+    function logout() {
+      let confirmLogout = confirm("Are you sure you want to logout?");
+      if (confirmLogout) {
+        window.location.href = "login.html";
+      }
+    }
+  </script>
+</body>
+</html>
